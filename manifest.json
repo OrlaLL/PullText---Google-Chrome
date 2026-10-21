@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "PullText",
+  "version": "1.0.0",
+  "description": "Captura a página inteira (desktop 1920px e mobile 480px), extrai o texto em Markdown, as meta tags e gera um ZIP.",
+  "permissions": ["activeTab", "scripting", "debugger", "downloads"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "PullText — capturar página",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "commands": {
+    "run-capture": {
+      "suggested_key": { "default": "Alt+Shift+P" },
+      "description": "Capturar a página atual e baixar o ZIP"
+    }
+  }
+}

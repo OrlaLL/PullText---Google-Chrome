@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>PullText</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="../icons/icon48.png" alt="" width="28" height="28">
+    <div>
+      <h1>PullText</h1>
+      <p id="domain" class="domain">—</p>
+    </div>
+  </header>
+
+  <ul class="outputs">
+    <li><span class="tag">PNG</span> Página inteira desktop · 1920px</li>
+    <li><span class="tag">PNG</span> Página inteira mobile · 480px</li>
+    <li><span class="tag">MD</span> Texto da página em Markdown</li>
+    <li><span class="tag">JSON</span> Meta tags</li>
+    <li><span class="tag">TXT</span> Domínio, data e hora</li>
+  </ul>
+
+  <button id="run" type="button">Capturar e baixar ZIP</button>
+
+  <section id="progress" hidden>
+    <div class="bar"><div id="bar-fill"></div></div>
+    <p id="step" class="step"></p>
+  </section>
+
+  <p id="error" class="msg error" hidden></p>
+  <div id="done" class="msg ok" hidden></div>
+
+  <footer>Atalho: <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> · Mantenha a aba visível durante a captura.</footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

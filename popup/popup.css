@@ -1,0 +1,67 @@
+:root {
+  --bg: #ffffff;
+  --fg: #111827;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --tag-bg: #eff6ff;
+  --tag-fg: #1d4ed8;
+  --ok-bg: #f0fdf4;
+  --ok-fg: #166534;
+  --err-bg: #fef2f2;
+  --err-fg: #991b1b;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #18181b;
+    --fg: #f4f4f5;
+    --muted: #a1a1aa;
+    --line: #2e2e33;
+    --accent: #3b82f6;
+    --accent-hover: #2563eb;
+    --tag-bg: #1e293b;
+    --tag-fg: #93c5fd;
+    --ok-bg: #052e16;
+    --ok-fg: #86efac;
+    --err-bg: #450a0a;
+    --err-fg: #fca5a5;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  width: 320px;
+  margin: 0;
+  padding: 16px;
+  background: var(--bg);
+  color: var(--fg);
+  font: 13px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+h1 { font-size: 15px; margin: 0; }
+.domain { margin: 0; color: var(--muted); font-size: 12px; max-width: 250px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.outputs { list-style: none; margin: 0 0 14px; padding: 10px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.outputs li { display: flex; align-items: center; gap: 8px; padding: 3px 0; }
+.tag {
+  display: inline-block; min-width: 38px; text-align: center;
+  font-size: 10px; font-weight: 600; letter-spacing: .03em;
+  padding: 1px 4px; border-radius: 4px;
+  background: var(--tag-bg); color: var(--tag-fg);
+}
+button {
+  width: 100%; padding: 10px; border: 0; border-radius: 8px;
+  background: var(--accent); color: #fff; font: inherit; font-weight: 600; cursor: pointer;
+}
+button:hover:not(:disabled) { background: var(--accent-hover); }
+button:disabled { opacity: .6; cursor: progress; }
+#progress { margin-top: 12px; }
+.bar { height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
+#bar-fill { height: 100%; width: 0; background: var(--accent); transition: width .25s ease; }
+.step { margin: 6px 0 0; color: var(--muted); font-size: 12px; }
+.msg { margin: 12px 0 0; padding: 8px 10px; border-radius: 8px; font-size: 12px; }
+.msg.error { background: var(--err-bg); color: var(--err-fg); }
+.msg.ok { background: var(--ok-bg); color: var(--ok-fg); }
+.msg.ok strong { word-break: break-all; }
+.msg.ok ul { margin: 4px 0 0; padding-left: 16px; }
+footer { margin-top: 14px; color: var(--muted); font-size: 11px; }
+kbd { font: inherit; font-size: 10px; padding: 0 4px; border: 1px solid var(--line); border-radius: 3px; }
